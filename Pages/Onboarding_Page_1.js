@@ -19,7 +19,10 @@ const Onboarding_Page_1 = ({navigation}) => {
                 contentFit={"cover"}
             />
             <Text style={styles.header_text}>Comprehensive Data</Text>
-            <Text style={styles.body_text}>Data that is easy to understand, at a glance. You select what you need to see, we tailor the experience to whats important for you.</Text>
+            <Text style={styles.body_text}>
+                Data that is easy to understand, at a glance.
+                You select what you need to see, we tailor the experience to whats important for you.
+            </Text>
             <Ionicons name="arrow-forward-circle-sharp" size={100} color='#FFDCB2'/>
             <StatusBar style="auto"/>
         </View>
