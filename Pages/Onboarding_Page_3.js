@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, Image } from 'react-native';
+import {Text, View, Image, Pressable} from 'react-native';
 import React from "react";
 import { Ionicons } from '@expo/vector-icons';
 import { styles } from "../Styles/Styles";
@@ -22,9 +22,14 @@ const Onboarding_Page_1 = ({ navigation }) => {
                     <Ionicons name="remove" size={40} color='#000000'/>
                 </View>
                 <View style={styles.icon_arrow}>
-                    <Ionicons name="arrow-forward-circle-sharp" size={80} color='#FFBF70'/>
+                    <Pressable onPressOut={() => navigation.replace("Signup")}>
+                        <Ionicons name="arrow-forward-circle-sharp" size={80} color='#FFBF70'/>
+                    </Pressable>
                 </View>
             </View>
+            <Pressable style={styles.Bottom_Text_Container}>
+                <Text style={styles.body_text}>Already have an account?</Text>
+            </Pressable>
         </View>
     );
 }
