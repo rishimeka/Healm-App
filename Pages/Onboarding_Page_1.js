@@ -4,7 +4,6 @@ import { Image } from 'expo-image';
 import React from "react";
 import { Ionicons } from '@expo/vector-icons';
 import { useFonts } from 'expo-font';
-import { useFonts, Inter_900Black } from '@expo-google-fonts/Urbanist';
 
 const Onboarding_Page_1 = ({navigation}) => {
     const [fontsLoaded] = useFonts({
@@ -13,6 +12,7 @@ const Onboarding_Page_1 = ({navigation}) => {
     });
     return (
         <View style={styles.container}>
+            <StatusBar style="auto"/>
             <Image
                 style={styles.image}
                 source={require('./../assets/Header-1.png')}
@@ -23,8 +23,16 @@ const Onboarding_Page_1 = ({navigation}) => {
                 Data that is easy to understand, at a glance.
                 You select what you need to see, we tailor the experience to whats important for you.
             </Text>
-            <Ionicons name="arrow-forward-circle-sharp" size={100} color='#FFDCB2'/>
-            <StatusBar style="auto"/>
+            <View style={styles.icon_container}>
+                <View style={styles.icon_progress}>
+                    <Ionicons name="remove" size={40} color='#000000'/>
+                    <Ionicons name="remove" size={40} color='#AAA8AD'/>
+                    <Ionicons name="remove" size={40} color='#AAA8AD'/>
+                </View>
+                <View style={styles.icon_arrow}>
+                    <Ionicons name="arrow-forward-circle-sharp" size={80} color='#FFBF70'/>
+                </View>
+            </View>
         </View>
     );
 }
@@ -51,6 +59,22 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontWeight: "normal",
     },
+    icon_arrow:{
+        alignItems: "flex-end"
+    },
+    icon_progress:{
+        alignItems: "flex-start",
+        flexDirection: "row",
+        flex: 1,
+    },
+    icon_container:{
+        position: "absolute",
+        bottom: 50,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        paddingHorizontal: 50,
+    }
 
 });
 export default Onboarding_Page_1;
