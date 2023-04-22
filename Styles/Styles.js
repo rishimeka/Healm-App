@@ -31,15 +31,15 @@ export const styles = StyleSheet.create({
     },
     icon_container:{
         position: "absolute",
-        bottom: 70,
+        bottom: 100,
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
-        paddingHorizontal: 50,
+        paddingHorizontal: 45,
     },
     Bottom_Text_Container:{
         position: "absolute",
-        bottom: 30,
+        bottom: 50,
         justifyContent: "space-between"
     },
 });
