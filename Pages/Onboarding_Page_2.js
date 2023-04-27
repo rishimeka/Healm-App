@@ -4,7 +4,7 @@ import React from "react";
 import { Ionicons } from '@expo/vector-icons';
 import { styles } from "../Styles/Styles";
 
-const Onboarding_Page_1 = ({ navigation }) => {
+const Onboarding_Page_2 = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <StatusBar style="auto"/>
