@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Onboarding_Page_1 from './Pages/Onboarding_Page_1';
+import Onboarding_Page_1 from "./Pages/Onboarding_Page_1";
 import Onboarding_Page_2 from "./Pages/Onboarding_Page_2";
 import Onboarding_Page_3 from "./Pages/Onboarding_Page_3";
 import Signup from "./Pages/Signup";

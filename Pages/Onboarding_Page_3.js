@@ -22,7 +22,7 @@ const Onboarding_Page_3 = ({ navigation }) => {
                     <Ionicons name="remove" size={40} color='#000000'/>
                 </View>
                 <View style={styles.icon_arrow}>
-                    <Pressable onPressOut={() => navigation.replace("Signup")}>
+                    <Pressable onPressOut={() => navigation.navigate("Signup")}>
                         <Ionicons name="arrow-forward-circle-sharp" size={80} color='#FFBF70'/>
                     </Pressable>
                 </View>
@@ -33,4 +33,4 @@ const Onboarding_Page_3 = ({ navigation }) => {
         </View>
     );
 }
-export default Onboarding_Page_1;
+export default Onboarding_Page_3;
