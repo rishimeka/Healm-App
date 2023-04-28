@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import {Text, View, Image, Pressable} from 'react-native';
 import React from "react";
 import { Ionicons } from '@expo/vector-icons';
-import { styles } from "../Styles/Styles";
+import { styles } from "../../Styles/Styles";
 import {shouldThrowAnErrorOutsideOfExpo} from "expo/build/environment/validatorState";
 
 const Onboarding_Page_1 = ({ navigation }) => {
@@ -11,7 +11,7 @@ const Onboarding_Page_1 = ({ navigation }) => {
             <StatusBar style="auto"/>
             <Image
                 style={styles.image}
-                source={require('./../assets/Header-1.png')}
+                source={require('./../../assets/Header-1.png')}
                 contentFit={"cover"}
             />
             <Text style={styles.header_text}>{'Comprehensive Data'}</Text>

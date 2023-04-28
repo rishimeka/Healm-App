@@ -1,19 +1,19 @@
 import {useState} from "react";
 import {Pressable, SafeAreaView, Text, TextInput, View} from "react-native";
-import {styles} from "../Styles/Styles";
+import {styles} from "../../Styles/Styles";
 import {StatusBar} from "expo-status-bar";
 import {StackActions} from "@react-navigation/native";
 import {checkUsername_password} from "./../User"
 import {Ionicons} from "@expo/vector-icons";
 
-const Login = ({navigation}) => {
+const LoginPage = ({navigation}) => {
     const [userName, setUserName] = useState('');
     const [fullName, setFullName] = useState('');
     const [password, setPassword] = useState('');
     function navigate(){
         if((userName !== "") && (password !== "")){
             if(checkUsername_password(userName, password) !== -1){
-                navigation.navigate("HomePage");
+                navigation.navigate("MainContainer");
             }
             else console.log("Invalid Username or Password")
         }
@@ -108,4 +108,4 @@ const Login = ({navigation}) => {
     );
 }
 
-export default Login;
+export default LoginPage;

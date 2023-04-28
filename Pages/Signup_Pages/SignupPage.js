@@ -1,9 +1,9 @@
 import {useState} from "react";
 import {Pressable, SafeAreaView, Text, TextInput, View} from "react-native";
-import {styles} from "../Styles/Styles";
+import {styles} from "../../Styles/Styles";
 import {StatusBar} from "expo-status-bar";
 import {StackActions} from "@react-navigation/native";
-import {getNumUsers, addToUserData} from "./../User"
+import {getNumUsers, addToUserData} from "../../User"
 import {Ionicons} from "@expo/vector-icons";
 
 const SignUp = ({navigation}) => {
@@ -22,11 +22,10 @@ const SignUp = ({navigation}) => {
                 }
             }
             addToUserData(user);
-            navigation.dispatch(
-                StackActions.replace('Login')
-            )
+            navigation.navigate("Login");
         }
         else{
+            
         }
     }
     return (
@@ -111,4 +110,4 @@ const SignUp = ({navigation}) => {
     );
 }
 
-export default SignUp;
+export default SignupPage;
