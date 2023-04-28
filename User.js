@@ -14,7 +14,16 @@ export let userData = {
                         trendSummery: "Higher than usual for this time of day",
                         value: "100",
                         units: "BPM",
-                        history: []
+                        history: {
+                            labels: ["6:00 AM", "12:00 PM", "6:00 PM", "12:00 AM"],
+                            datasets: [
+                                {
+                                    data: [65, 78, 85, 72, 80, 68],
+                                    color: () => '#F43F5E', // optional
+                                    strokeWidth: 2 // optional
+                                }
+                            ]
+                        }
                     },
                     bloodPressure:{
                         lastRecordedDate: "Today",

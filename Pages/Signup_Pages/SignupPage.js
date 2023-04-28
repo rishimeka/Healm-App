@@ -3,10 +3,10 @@ import {Pressable, SafeAreaView, Text, TextInput, View} from "react-native";
 import {styles} from "../../Styles/Styles";
 import {StatusBar} from "expo-status-bar";
 import {StackActions} from "@react-navigation/native";
-import {getNumUsers, addToUserData} from "../../User"
+import {checkUsername_password} from "../../User"
 import {Ionicons} from "@expo/vector-icons";
 
-const SignUp = ({navigation}) => {
+const SignupPage = ({navigation}) => {
     const [email, setEmail] = useState('');
     const [fullName, setFullName] = useState('');
     const [password, setPassword] = useState('');
