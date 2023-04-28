@@ -5,6 +5,8 @@ import Onboarding_Page_1 from "./Pages/Onboarding_Page_1";
 import Onboarding_Page_2 from "./Pages/Onboarding_Page_2";
 import Onboarding_Page_3 from "./Pages/Onboarding_Page_3";
 import Signup from "./Pages/Signup";
+import Login from "./Pages/Login";
+import HomePage from "./Pages/HomePage";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,13 +19,13 @@ const Navigator = () => {
                         backgroundColor: 'transparent',
                         title: '',
                     },
-                    headerTintColor: '#F2EFEA',
+                    headerTintColor: '#F3F0F7',
                     headerTransparent: true,
                     headerTitle: 'Healm App',
                     headerTitleStyle: {
                         fontWeight: '800',
-                        fontSize: 26,
-                        color: '#F2EFEA',
+                        fontSize: 0,
+                        color: '#F3F0F7',
                         marginTop: 5,
                         marginLeft: '5%',
                         marginBottom: 30,
@@ -49,6 +51,14 @@ const Navigator = () => {
                 <Stack.Screen
                     name="Signup"
                     component={Signup}
+                />
+                <Stack.Screen
+                    name="Login"
+                    component={Login}
+                />
+                <Stack.Screen
+                    name="HomePage"
+                    component={HomePage}
                 />
 
             </Stack.Navigator>
