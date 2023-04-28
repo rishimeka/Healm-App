@@ -28,7 +28,7 @@ const Onboarding_Page_1 = ({ navigation }) => {
                     </Pressable>
                 </View>
             </View>
-            <Pressable style={styles.Bottom_Text_Container}>
+            <Pressable style={styles.Bottom_Text_Container} onPressOut={() => navigation.navigate("Login")}>
                 <Text style={styles.body_text}>Already have an account?</Text>
             </Pressable>
         </View>

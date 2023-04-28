@@ -6,17 +6,20 @@ import {StackActions} from "@react-navigation/native";
 import {getNumUsers, addToUserData} from "../../User"
 import {Ionicons} from "@expo/vector-icons";
 
-const SignupPage = ({navigation}) => {
-    const [userName, setUserName] = useState('');
+const SignUp = ({navigation}) => {
+    const [email, setEmail] = useState('');
     const [fullName, setFullName] = useState('');
     const [password, setPassword] = useState('');
     function navigate(){
-        if((userName !== "") && (fullName !== "")){
+        if((email !== "") && (fullName !== "")){
             let user = {
                 userid: getNumUsers(),
                 fullName: fullName,
-                email: userName,
+                email: email,
                 password: password,
+                patient: {
+
+                }
             }
             addToUserData(user);
             navigation.navigate("Login");
@@ -36,7 +39,7 @@ const SignupPage = ({navigation}) => {
                         style={styles.text_input_text}
                         returnKeyType="done"
                         onChangeText={(userInputValue) => setFullName(userInputValue)}
-                        placeholder={"Username"}/>
+                        placeholder={"Your Name"}/>
                 </View>
                 <View style={styles.text_input_box}>
                     <Ionicons style={styles.text_input_icons} size={30} name="mail-outline"></Ionicons>
@@ -44,7 +47,7 @@ const SignupPage = ({navigation}) => {
                         style={styles.text_input_text}
                         keyboardType="email-address"
                         returnKeyType="done"
-                        onChangeText={(userInputValue) => setUserName(userInputValue)}
+                        onChangeText={(userInputValue) => setEmail(userInputValue)}
                         placeholder={"Email Address"}/>
                 </View>
                 <View style={styles.text_input_box}>
@@ -81,9 +84,8 @@ const SignupPage = ({navigation}) => {
                 </Pressable>
                 <Pressable
                     style={styles.new_user_signup_button}
-                    onPress={() => navigation.dispatch(
-                        StackActions.replace('Login')
-                    )}>
+                    onPress={() => navigation.navigate('Login')}
+                    >
                     <Text style={styles.subheader_text}>Already Have an Account? </Text><Text style={styles.new_user_signup_button_text}>Sign in</Text>
                 </Pressable>
                 <View style={{
@@ -93,10 +95,7 @@ const SignupPage = ({navigation}) => {
                 }}>
                     <Text style={styles.subheader_text}> By using our services you are agreeing to our </Text>
                     <Pressable
-                        style={styles.new_user_signup_button}
-                        onPress={() => navigation.dispatch(
-                            StackActions.replace('Login')
-                        )}>
+                        style={styles.new_user_signup_button}>
                         <Text style={{
                             color: '#F6AF71',
                             fontWeight: "normal",
