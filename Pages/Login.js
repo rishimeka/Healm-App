@@ -3,7 +3,7 @@ import {Pressable, SafeAreaView, Text, TextInput, View} from "react-native";
 import {styles} from "../Styles/Styles";
 import {StatusBar} from "expo-status-bar";
 import {StackActions} from "@react-navigation/native";
-import {getNumUsers, addToUserData} from "./../User"
+import {checkUsername_password} from "./../User"
 import {Ionicons} from "@expo/vector-icons";
 
 const Login = ({navigation}) => {
@@ -11,11 +11,13 @@ const Login = ({navigation}) => {
     const [fullName, setFullName] = useState('');
     const [password, setPassword] = useState('');
     function navigate(){
-        if((userName !== "") && (fullName !== "")){
-
+        if((userName !== "") && (password !== "")){
+            if(checkUsername_password(userName, password) !== -1){
+                navigation.navigate("HomePage");
+            }
+            else console.log("Invalid Username or Password")
         }
-        else{
-        }
+        else console.log("Username or Password incomplete")
     }
     return (
         <SafeAreaView style={styles.container}>
@@ -81,8 +83,8 @@ const Login = ({navigation}) => {
                 </Pressable>
                 <Pressable
                     style={styles.new_user_signup_button}
-                    onPressOut={() => navigation.replace("Signup")}>
-                    <Text style={styles.subheader_text}>Don’t have an account? </Text><Text style={styles.new_user_signup_button_text}>Sign In</Text>
+                    onPressOut={() => navigation.navigate("Signup")}>
+                    <Text style={styles.subheader_text}>Don’t have an account? </Text><Text style={styles.new_user_signup_button_text}>Sign Up</Text>
                 </Pressable>
                 <View style={{
                     alignItems: "center",
@@ -91,10 +93,7 @@ const Login = ({navigation}) => {
                 }}>
                 <Text style={styles.subheader_text}> By using our services you are agreeing to our </Text>
                     <Pressable
-                        style={styles.new_user_signup_button}
-                        onPress={() => navigation.dispatch(
-                            StackActions.replace('Login')
-                        )}>
+                        style={styles.new_user_signup_button}>
                         <Text style={{
                             color: '#F6AF71',
                             fontWeight: "normal",
