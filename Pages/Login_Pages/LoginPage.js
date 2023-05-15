@@ -3,7 +3,7 @@ import {Pressable, SafeAreaView, Text, TextInput, View} from "react-native";
 import {styles} from "../../Styles/Styles";
 import {StatusBar} from "expo-status-bar";
 import {StackActions} from "@react-navigation/native";
-import {checkUsername_password} from "./../User"
+import { checkUsername_password } from "../../User";
 import {Ionicons} from "@expo/vector-icons";
 
 const LoginPage = ({navigation}) => {

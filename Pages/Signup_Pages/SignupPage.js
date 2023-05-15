@@ -6,7 +6,7 @@ import {StackActions} from "@react-navigation/native";
 import {getNumUsers, addToUserData} from "../../User"
 import {Ionicons} from "@expo/vector-icons";
 
-const SignUp = ({navigation}) => {
+const SignupPage = ({navigation}) => {
     const [email, setEmail] = useState('');
     const [fullName, setFullName] = useState('');
     const [password, setPassword] = useState('');
