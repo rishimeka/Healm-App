@@ -4,10 +4,8 @@ import {styles} from "../../Styles/Styles";
 import {getUserData} from "../../User";
 import {LineChart} from "react-native-chart-kit";
 import {FontAwesome, MaterialIcons} from '@expo/vector-icons';
-import useHealthData from "../../hooks/useHealthData";
 
-const HeartRatePage = ({navigation}) => {
-
+const BloodPressurePage = ({navigation}) => {
     return(
         <SafeAreaView style={styles.container}>
             <View style={styles.container}>
@@ -16,14 +14,14 @@ const HeartRatePage = ({navigation}) => {
                     alignSelf: "flex-start",
                     marginLeft: 5,
                     marginVertical: 10,
-                }}>Heart Rate</Text>
+                }}>Blood Pressure</Text>
                 <View style={styles.headerLine}/>
                 <View style={{backgroundColor: "white", height: 300, borderRadius: 20}}>
                     <View style={{flexDirection: "row", alignItems: 'center'}}>
                         <View>
-                            <Text style={styles.heartRateText}>Heart Rate</Text>
-                            <Text style={styles.numberText}>{getUserData().patient.patient1.heartCategoryInfo.heartRate.value}<Text style={styles.bpmText}>{" " + getUserData().patient.patient1.heartCategoryInfo.heartRate.units}</Text></Text>
-                            <Text style={styles.smallText}>Average Heart Rate for Today</Text>
+                            <Text style={styles.heartRateText}>Blood Pressure</Text>
+                            <Text style={styles.numberText}>{getUserData().patient.patient1.heartCategoryInfo.bloodPressure.value}<Text style={styles.bpmText}>{" " + getUserData().patient.patient1.heartCategoryInfo.bloodPressure.units}</Text></Text>
+                            <Text style={styles.smallText}>Average Blood Pressure for Today</Text>
                         </View>
                         <Pressable style={styles.detailsButton}>
                             <Text style={{}}>Details</Text>
@@ -31,7 +29,7 @@ const HeartRatePage = ({navigation}) => {
                         </Pressable>
                     </View>
                     <LineChart
-                        data={getUserData().patient.patient1.heartCategoryInfo.heartRate.history}
+                        data={getUserData().patient.patient1.heartCategoryInfo.bloodPressure.history}
                         width={Dimensions.get("screen").width*0.9}
                         height={175}
                         chartConfig={{
@@ -67,4 +65,4 @@ const HeartRatePage = ({navigation}) => {
     );
 }
 
-export default HeartRatePage;
+export default BloodPressurePage;
