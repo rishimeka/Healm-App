@@ -16,6 +16,7 @@ const LoginPage = ({navigation}) => {
                 navigation.navigate("HomePage");
             }
             else console.log("Invalid Username or Password")
+            console.log(userName, password)
         }
         else console.log("Username or Password incomplete")
     }
